@@ -1,0 +1,10 @@
+//npm install dotenv
+//Crie um arquivo de com o nome de .env com as seguintes 
+//instruções de acordo com sua base de dados ou ambiente.
+//Remova os comentários de .env
+//insira o .env no gitignore para não publicar informações sensiveis.
+DB_HOST=localhostName
+DB_PORT=3333
+DB_USER=root
+DB_PASS=Pass
+DB_NAME=dbName
