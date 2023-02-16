@@ -1,0 +1,26 @@
+dependencies
+npm install @prisma/client@4.10.1 --save
+npm install dotenv@16.0.3 --save
+npm install class-validator@0.14.0 --save
+npm install class-transformer@0.5.1 --save
+
+devDependencies
+npm install prisma@4.10.1 --save-dev
+
+Commands
+npx prisma init --datasource-provider SQLite
+
+npx prisma migrate dev
+create notifications
+npx prisma studio
+
+
+Ctrl+Shift+P 
+>open user settings.json
+
+"[prisma]": {
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "Prisma.prisma"
+},
+
+aula2   1:12:00
