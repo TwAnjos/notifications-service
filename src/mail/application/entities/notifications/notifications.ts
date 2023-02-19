@@ -17,10 +17,10 @@ export class Notification{
     }
 
 
-    public get readDate(): Date|null {
+    public get readDate(): Date|null|undefined {
         return this.props.readDate
     }
-    public set readDate(value: Date|null) {
+    public set readDate(value: Date|null|undefined) {
         this.props.readDate = value
     }
 
