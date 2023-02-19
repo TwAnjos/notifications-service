@@ -1,30 +1,36 @@
+import { Replace } from "src/helpers/Replace"
 import { Content } from "./content"
 
-export interface NotificationProps{
-
+export interface NotificationProps {
     recipientId: string
     content: Content
     category: string
-    readDate?: Date|null    //? = undefined
+    readDate?: Date | null    //? = undefined
     createdDate: Date
 }
 
-export class Notification{
+export class Notification {
     private props: NotificationProps
-    
-    constructor(props: NotificationProps) {
-        this.props = props
+
+    constructor(props: Replace<NotificationProps, { createDate?: Date } > ) {
+        
+        this.props = {
+            ...props,
+            createdDate: props.createdDate ?? new Date()
+            // content: props.content,
+            // category: props.category,
+            // recipientId: props.recipientId
+        }
     }
 
-
-    public get readDate(): Date|null|undefined {
+    public get readDate(): Date | null | undefined {
         return this.props.readDate
     }
-    public set readDate(value: Date|null|undefined) {
+    public set readDate(value: Date | null | undefined) {
         this.props.readDate = value
     }
 
-    public get createdDate(): Date|null {
+    public get createdDate(): Date | null {
         return this.props.createdDate
     }
 
@@ -33,20 +39,20 @@ export class Notification{
     //     this.props.createdDate = value
     // }
 
-    public set content(value: Content){
+    public set content(value: Content) {
         //if(content.length < 5){ throw new Error() }
         this.props.content = value
     }
 
-    public get content():Content {
+    public get content(): Content {
         return this.props.content
     }
 
-    public set category(value: string){
+    public set category(value: string) {
         this.props.category = value
     }
 
-    public get category():string {
+    public get category(): string {
         return this.props.category
     }
 }

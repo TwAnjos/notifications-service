@@ -1,9 +1,9 @@
 import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
-import { MailService } from '../mail.service';
+import { MailService } from './mail-POC/mail.service';
 //import { PostmarkMailService } from './mail/postmark-mail.service';
 //import { AppService } from './app.service';
-import { SMTPMailService } from '../smtp-mail.service';
+import { SMTPMailService } from './mail-POC/smtp-mail.service';
 import { PrismaService } from './prisma.service';
 
 @Module({
