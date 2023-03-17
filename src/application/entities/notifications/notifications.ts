@@ -6,17 +6,17 @@ export interface NotificationProps {
     content: Content
     category: string
     readDate?: Date | null    //? = undefined
-    createdDate: Date
+    createdDate?: Date
 }
 
 export class Notification {
     private props: NotificationProps
 
-    constructor(props: Replace<NotificationProps, { createDate?: Date } > ) {
+    constructor(props: Replace<NotificationProps, { createDate?: Date|undefined} > ) {
         
         this.props = {
             ...props,
-            createdDate: props.createdDate ?? new Date()
+            createdDate: props.createdDate ?? new Date(),
             // content: props.content,
             // category: props.category,
             // recipientId: props.recipientId
